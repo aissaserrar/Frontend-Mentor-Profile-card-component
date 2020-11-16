@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+:root {
+    font-family: 'Kumbh Sans', sans-serif;
+    --dark-cyan: hsl(185, 75%, 39%);
+    --very-dark-blue: hsl(229, 23%, 23%);
+    --dark-grayish-blue: hsl(227, 10%, 46%);
+}
+
+.bg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--dark-cyan);
+}
+
+.bg::before,
+.bg::after {
+    content: '';
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 110vh;
+    height: 110vh;
+}
+
+.bg::before {
+    top: -50vh;
+    left: -7vw;
+    background: url('images/bg-pattern-top.svg') no-repeat center center/cover;
+}
+
+.bg::after {
+    bottom: 65vh;
+    left: 50vw;
+    background: url('images/bg-pattern-bottom.svg') no-repeat center center/cover;
+
+}
+
+main {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+}
+
+.card {
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px 10px rgba(0, 0, 0, 0.205);
+}
+
+.card-header {
+    width: 100%;
+    height: 35%;
+    background-image: url('images/bg-pattern-card.svg');
+}
+
+.avatar {
+    background-color: white;
+    padding: 5px;
+    display: inline-block;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.card h1 {
+    font-size: 1.3rem;
+
+    font-weight: 700;
+    color: var(--very-dark-blue);
+    line-height: 3rem;
+}
+
+.card h1 span {
+    font-weight: 300;
+    color: var(--dark-grayish-blue);
+    font-size: 1.2rem;
+}
+
+P {
+    color: var(--dark-grayish-blue);
+    font-size: .8rem;
+}
+
+.card .bio {
+    margin-top: -50px;
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: inline-block;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px var(--dark-grayish-blue) solid;
+}
+
+.stats div {
+    display: inline-block;
+}
+
+.stats h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--very-dark-blue);
+
+}
+
+.attribution {
+    font-size: 11px;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
+
+.attribution a {
+    color: rgba(255, 255, 255, 0.568);
+}
+
+@media(max-width:375px) {
+
+    .bg::before,
+    .bg::after {
+        width: 70vh;
+        height: 70vh;
+    }
+
+    .bg::before {
+        top: -30vh;
+        left: -80vw;
+    }
+
+    .bg::after {
+        bottom: 20vh;
+        left: 50vw;
+    }
+}
